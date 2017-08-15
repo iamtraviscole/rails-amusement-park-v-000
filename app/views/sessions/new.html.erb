@@ -1,8 +1,9 @@
 <h1>Sign In</h1>
-<%= form_tag("/sessions", method: "post") do %>
-  <%= label_tag(:name) %>
-  <%= text_field_tag(:name) %>
-  <%= label_tag(:password) %>
-  <%= text_field_tag(:password) %>
-  <%= submit_tag("Sign In") %>
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <%= f.label(:name) %>
+  <%= f.text_field(:name) %>
+  <%= f.label(:password) %>
+  <%= f.text_field(:password) %>
+  <%= f.submit("Sign In") %>
 <% end %>
